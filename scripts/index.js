@@ -133,7 +133,7 @@ async function handleAuth(name, email, password, isSignUpMode) {
     let result;
 
     if (isSignUpMode) {
-      result = await fetch(`${API_URL}auth/register`, {
+      result = await fetch(`${API_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -665,6 +665,8 @@ document.querySelector('.room-info').addEventListener('click', () => {
 
 // Check if user is logged in
 (async () => {
+  //waking up backend
+  await fetch(`${API_URL}`);
   const token = localStorage.getItem('token');
   let result;
   try{

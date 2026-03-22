@@ -10,25 +10,7 @@
   </head>
   <body>
 
-    <div id="toast-container" class="toast-container">
-      <!-- <div class="toast info">
-        <div class="toast-icon info">?</div>
-        <div class="toast-content">
-          <div class="toast-title">Join Request</div>
-          <div class="toast-message">Abhishek</div>
-        </div>
-        <div class="toast-actions">
-          <button class="btn approve" onclick="approve()">✓</button>
-          <button class="btn reject">×</button>
-        </div>
-        <button class="toast-close">×</button>
-        <script>
-          function approve() {
-            alert('Approved');
-          }
-        </script>
-      </div> -->
-    </div>
+    <div id="toast-container" class="toast-container"></div>
 
     <div id="auth-page" class="page" style="display: none;">
       <div class="auth-container">
@@ -127,7 +109,7 @@
         <div class="resizer-lr"></div>
         <div class="right-section">
           <div class="input-container">
-            <textarea id="code-input" placeholder="Input for code..."></textarea>
+            <textarea id="code-input" placeholder="Input for code...(stdin)"></textarea>
           </div>
           <div class="output-container">
             <textarea id="output" placeholder="Output will be displayed here..." readonly></textarea>
