@@ -665,8 +665,6 @@ document.querySelector('.room-info').addEventListener('click', () => {
 
 // Check if user is logged in
 (async () => {
-  //waking up backend
-  await fetch(`${API_URL}`);
   const token = localStorage.getItem('token');
   let result;
   try{

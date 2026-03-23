@@ -4,19 +4,36 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./static/icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A real-time collaborative coding platform designed for developers, teams, and learners. Write, edit, and debug code simultaneously with others in a shared environment—no setup required. Whether you're pair programming, or teaching code, our platform keeps everyone in sync with instant updates, live cursors, and seamless communication.">
+    <meta name="google-site-verification" content="ef_OXEuNSqf6wCvE_hXAu8orEDTV_MQgwkogyZHcupo" />
     <link rel="stylesheet" href="./styles/style.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>CodeCouch - Collaborative Editor</title>
   </head>
   <body>
+    <div class="background-pattern"></div>
 
     <div id="toast-container" class="toast-container"></div>
 
     <div id="auth-page" class="page" style="display: none;">
       <div class="auth-container">
+
+        <div class="app-description">
+          <div class="title">
+            <h1 class="sym" style="color: rgba(231, 30, 114, 0.797);">&#60;</h1>
+            <h1 class="sym" style="color: rgba(139, 139, 139, 0.797);">/</h1>
+            <h1>CodeCouch</h1>
+            <h1 class="sym" style="color: rgba(30, 208, 231, 0.797);">&#62;</h1>
+          </div>
+          <p>
+            A real-time collaborative coding platform designed for developers, teams, and learners. Write, edit, and run code simultaneously with others in a shared environment—no setup required.
+          </p>
+        </div>
+
         <div class="auth-card">
-          <h1>CodeCouch</h1>
-          <p class="auth-subtitle">Collaborative Code Editor</p>
+          <h2>Login/Sign Up</h2>
+          <br>
+          <!-- <p class="auth-subtitle">Collaborative Code Editor</p> -->
           <form id="auth-form">
             <input type="text" id="name" placeholder="Name" style="display: none;" />
             <input type="email" id="email" placeholder="Email" required />
@@ -173,6 +190,20 @@
         </form>
       </div>
     </div>
+
+    <!-- footer -->
+     <footer class="footer">
+        <p>© 2026 CodeCouch. All rights reserved.</p>
+        
+        <p>Made with ❤️ by Abhishek Chakraborty</p>
+        
+        <div class="socials">
+          <a href="https://linkedin.com/in/abhishek-chk" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <!-- <a href="https://github.com/yourusername" target="_blank">GitHub</a> -->
+          <!-- <a href="https://twitter.com/yourusername" target="_blank">Twitter</a> -->
+        </div>
+      </footer>
+
     <audio id="joinReqSound" src="./static/join.mp3"></audio>
     <script type="module" src="./scripts/index.js"></script>
   </body>
