@@ -14,7 +14,7 @@ let remoteDecorations = {};
 
 let currentLang = "python";
 let langdata = {
-  "python": "Python (3.12)"
+  "python": {"display": "Python (3.12)", "monaco": "python", "extension": "py"}
 };
 
 let userIndexMap = {};
@@ -511,12 +511,12 @@ async function initLanguageSelection(){
   if (response.status == 200) {
     const data = await response.json();
     langdata = data;
-    langSelectBtn.innerHTML = langdata[currentLang]+ '<i class="fa-solid fa-chevron-down"></i>';
+    langSelectBtn.innerHTML = langdata[currentLang].display + '<i class="fa-solid fa-chevron-down"></i>';
     Object.keys(langdata).forEach(lang => {
       const option = document.createElement('div');
       option.classList.add('lang');
       option.dataset.lang = lang;
-      option.innerHTML = langdata[lang]; 
+      option.innerHTML = langdata[lang].display; 
       if (lang === currentLang) option.innerHTML += '<i class="fa-solid fa-check"></i>';
       langOptionsContainer.appendChild(option);
     });
@@ -547,14 +547,14 @@ async function initLanguageSelection(){
 
   langOptions.forEach(option => {
     option.addEventListener('click', () => {
-      langOptions.forEach(opt => opt.innerHTML = langdata[opt.dataset.lang]);
+      langOptions.forEach(opt => opt.innerHTML = langdata[opt.dataset.lang].display);
       currentLang = option.dataset.lang;
-      option.innerHTML = langdata[currentLang] + '<i class="fa-solid fa-check"></i>';
-      langSelectBtn.innerHTML = langdata[currentLang] + '<i class="fa-solid fa-chevron-down"></i>';
+      option.innerHTML = langdata[currentLang].display + '<i class="fa-solid fa-check"></i>';
+      langSelectBtn.innerHTML = langdata[currentLang].display + '<i class="fa-solid fa-chevron-down"></i>';
       langSearchWrapper.classList.toggle('hidden');
       langSearchInput.value = '';
       langOptions.forEach(opt => opt.style.display = 'flex');
-      setLanguage(editor, currentLang);
+      setLanguage(editor, langdata[currentLang].monaco);
     });
   });
 }
